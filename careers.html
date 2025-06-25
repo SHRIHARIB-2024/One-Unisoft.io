@@ -38,91 +38,83 @@
         height: 40px;
     }
 
+    /* Default: desktop view */
     .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+      list-style: none; /* ✅ This removes the dots */
+      padding: 0;
+      margin: 0;
     }
 
-    .nav-links a {
-        text-decoration: none;
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    /* Mobile: show hamburger, hide nav links initially */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        border-radius: 8px;
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        padding: 1rem;
+        text-align: right;
+      }
+
+      .nav-links a {
         color: #111;
         font-weight: 600;
-        transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-        color: #afb6fd;
-    }
-
-    /* Responsive hamburger menu */
-    .hamburger {
-        display: none;
-        font-size: 28px;
-        cursor: pointer;
-        color: black;
-    }
-
-    @media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        height: 0;
-        overflow: hidden;
-        background-color: #ccd3fd;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        transition: 0.3s ease;
-        z-index: 999;
-    }
-
-    .nav-links li {
-        width: 100%;
-        padding: 1rem 2rem;
+      }
     }
 
     .nav-links a {
-        color: white;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .nav-links.nav-active {
-        height: auto;
-        padding-bottom: 10px;
-    }
-    }
-
-    .nav-links a {
-        position: relative;
-        color: #333;
-        font-weight: bold;
-        text-decoration: none;
-        transition: color 0.3s ease;
+      position: relative;
+      color: #333;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     .nav-links a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -4px;
-        width: 0;
-        height: 2px;
-        background-color: crimson;
-        transition: width 0.4s ease;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: crimson;
+      transition: width 0.4s ease;
     }
 
     .nav-links a:hover {
-        color: crimson;
+      color: crimson;
     }
 
     .nav-links a:hover::after {
-        width: 100%;
+      width: 100%;
     }
+
+
 
 
     .scam-alert {
@@ -616,6 +608,14 @@
       </div>
     </div>
   </footer>
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

@@ -546,12 +546,16 @@
 </style>
 
 
-  <script src="index.js">
+  <script src="index.js"></script>
+<!-- Inline script to toggle hamburger -->
+<script>
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
+
   hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+    navLinks.classList.toggle('active');
   });
+</script>
 
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

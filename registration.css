@@ -67,7 +67,7 @@ body {
   display: none;
   font-size: 28px;
   cursor: pointer;
-  color: crimson;
+  color: black;
 }
 
 @media (max-width: 768px) {
