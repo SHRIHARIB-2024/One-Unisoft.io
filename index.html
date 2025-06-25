@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>One Unisoft</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+</head>
+<body id="top">
+    
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="https://vocal-bonbon-f95ea2.netlify.app/img/logo.png" alt="unisoft logo">
+        </a>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="registration.html">Registration</a><a href="login.html">/Login</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">☰</div>
+  </header>
+  <div class="background-animated"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <video id="bgVideo" autoplay muted loop class="bg-video">
+      <source src="videos/91074-628462684.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
+        <section class="hero-text">
+        <h1>
+          <span class="highlight">Welcome to</span><br>
+          <span class="brand-change">One Unisoft</span><br>
+          <span class="subtitle">Innovation • Quality • Services</span>
+        </h1>
+        </section>
+
+      <button>Explore More</button>
+    </div>
+  </section>
+
+<!-- SAP Services Section -->
+<section id="services" class="services">
+  <h2>Our SAP Services
+    <span class="underline"></span>
+  </h2>
+  <div class="service-cards">
+    <!-- Card 1 -->
+    <div class="card" data-aos="fade-up">
+      <img src="https://img.freepik.com/free-photo/business-people-working-with-technology_23-2149279279.jpg" alt="SAP Implementation">
+      <div class="card-content">
+        <h3>SAP Implementation</h3>
+        <p>Full-cycle SAP implementation to digitize and optimize your business operations.</p>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://img.freepik.com/free-vector/server-room-data-center-isometric-composition_1284-58310.jpg" alt="SAP Cloud Solutions">
+      <div class="card-content">
+        <h3>SAP Cloud Solutions</h3>
+        <p>Migrate to SAP Cloud Platform for agility, security, and real-time access.</p>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://img.freepik.com/free-vector/artificial-intelligence-concept-illustration_114360-4537.jpg" alt="SAP Support & Maintenance">
+      <div class="card-content">
+        <h3>Support & Maintenance</h3>
+        <p>Continuous support and upgrades to keep your SAP system stable and up-to-date.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+  .services {
+    padding: 4rem 2rem;
+    background: white;
+    text-align: center;
+  }
+
+  .services h2 {
+    font-size: 2.8rem;
+    color: #111;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .services .underline {
+    display: block;
+    height: 4px;
+    width: 90px;
+    margin: 10px auto 0;
+    background: linear-gradient(to right, #e60026, #000);
+    border-radius: 5px;
+  }
+
+  .service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 320px;
+    transition: all 0.6s ease;
+    cursor: pointer;
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  .aos-animate.card {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .card-content h3 {
+    color: #e60026;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+    color: #000;
+  }
+
+  .card:hover {
+    transform: scale(1.07);
+    background: #f4f4f4;
+    box-shadow: 0 16px 32px rgba(230, 0, 38, 0.3);
+  }
+
+  .card:hover h3 {
+    color: #000;
+  }
+
+  .card:hover p {
+    color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+      max-width: 90%;
+    }
+  }
+</style>
+
+<!-- AOS Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    offset: 150,
+    easing: 'ease-in-out',
+    once: true
+  });
+</script>
+
+
+
+<!-- Insights Section -->
+<section id="insights" class="insights">
+  <div class="container">
+    <h2 data-aos="fade-up">Latest Insights</h2>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Explore the latest in technology and business solutions.
+    </p>
+
+    <div class="insight-cards">
+      <div class="insight-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://img.freepik.com/free-photo/businesspeople-working-financial-project_53876-138019.jpg" alt="Tech Trends">
+        <div class="content">
+          <h3>Top SAP Trends in 2025</h3>
+          <p>Discover how SAP S/4HANA and cloud strategies are reshaping industries.</p>
+        </div>
+      </div>
+
+      <div class="insight-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://img.freepik.com/free-vector/illustration-people-analyzing-growth-charts_53876-63158.jpg" alt="Business Insight">
+        <div class="content">
+          <h3>Smart ERP Integration</h3>
+          <p>Learn how businesses achieve seamless data flow across platforms.</p>
+        </div>
+      </div>
+
+      <div class="insight-card" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://img.freepik.com/free-photo/hand-touching-virtual-screen-innovation-technology-digital-transformation-concept_53876-124623.jpg" alt="Digital Future">
+        <div class="content">
+          <h3>Digital Transformation</h3>
+          <p>Explore how AI, ML, and IoT are driving intelligent enterprise evolution.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+  .insights {
+    padding: 4rem 2rem;
+    background: #fafafa;
+    text-align: center;
+  }
+
+  .insights h2 {
+    font-size: 2.6rem;
+    color: #e60026;
+    margin-bottom: 0.5rem;
+  }
+
+  .insights p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 3rem;
+  }
+
+  .insight-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .insight-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: 320px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: left;
+    filter: grayscale(100%);
+  }
+
+  .insight-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: filter 0.4s ease;
+  }
+
+  .insight-card .content {
+    padding: 1.3rem;
+  }
+
+  .insight-card h3 {
+    font-size: 1.3rem;
+    color: #000;
+    margin-bottom: 0.6rem;
+  }
+
+  .insight-card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .insight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(230, 0, 38, 0.25);
+    filter: grayscale(0%);
+  }
+
+  .insight-card:hover img {
+    filter: grayscale(0%);
+  }
+
+  @media (max-width: 768px) {
+    .insight-card {
+      width: 90%;
+    }
+  }
+</style>
+
+<!-- Careers & Contact Us Section -->
+<section class="cta-section">
+  <div class="cta-box">
+    <h2>Careers</h2>
+    <p>Gain a heritage. Leave a legacy.</p>
+    <a href="careers.html" class="cta-btn">Join Us</a>
+  </div>
+  <div class="cta-box">
+    <h2>Contact Us</h2>
+    <p>What can we help you achieve.</p>
+    <a href="contact.html" class="cta-btn">Speak with Us</a>
+  </div>
+</section>
+
+
+<style>
+.cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 20px;
+  background-color: #302e2e;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.cta-box {
+  max-width: 320px;
+  text-align: center;
+  padding: 20px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cta-box h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #d32f2f;
+}
+
+.cta-box p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #d32f2f;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
+
+</style>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="https://vocal-bonbon-f95ea2.netlify.app/img/logo.png" alt="unisoft logo" class="footer-logo" />
+    </div>
+
+    <div class="footer-menus">
+      <div class="footer-menu">
+        <ul>
+          <li><a href="#">Our Brand</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Corporate Citizenship</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-menu">
+        <ul>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Alumni</a></li>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">Cookie Preferences</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="footer-social">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:info@unisoftglobalservices.com" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+      <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <div class="back-to-top">
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 | One Unisoft</p>
+    <div class="footer-links">
+      <a href="#">Terms of Use</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Privacy</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Footer Styles -->
+<style>
+  .footer {
+    background-color: #111;
+    color: #fff;
+    padding: 3rem 2rem 1rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #444;
+    padding-bottom: 2rem;
+  }
+
+  .footer-logo {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .footer-menus {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .footer-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-menu ul li {
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-menu ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-menu ul li a:hover {
+    color: #fff;
+  }
+
+  .footer-social {
+    margin-top: 0.1rem;
+  }
+
+  .footer-social a {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    transition: color 0.3s;
+  }
+
+  .footer-social a:hover {
+    color: #e60026;
+  }
+
+  .back-to-top {
+    margin-top: 3rem;
+  }
+
+  .back-to-top a {
+    color: #e60026;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s;
+  }
+
+  .back-to-top a:hover {
+    opacity: 0.8;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+
+  .footer-bottom .footer-links a {
+    color: #aaa;
+    margin-left: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-bottom .footer-links a:hover {
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .footer-top {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .footer-menus {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .footer-bottom .footer-links a {
+      margin-left: 0;
+      margin-right: 1rem;
+    }
+  }
+</style>
+
+
+  <script src="index.js">
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  });
+
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+</body>
+</html>

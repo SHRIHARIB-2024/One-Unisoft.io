@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Unisoft Global Services</title>
+  <link rel="stylesheet" href="contact.css">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      margin-top: 80px;
+
+    }
+
+    /* Header / Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background-color: #fff;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #111;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #afb6fd;
+    }
+
+    /* Responsive hamburger menu */
+    .hamburger {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: black;
+    }
+
+    @media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        height: 0;
+        overflow: hidden;
+        background-color: #ccd3fd;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        transition: 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links li {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+
+    .nav-links a {
+        color: white;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links.nav-active {
+        height: auto;
+        padding-bottom: 10px;
+    }
+    }
+
+    .nav-links a {
+        position: relative;
+        color: #333;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background-color: crimson;
+        transition: width 0.4s ease;
+    }
+
+    .nav-links a:hover {
+        color: crimson;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .contact-container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: crimson;
+      margin-bottom: 25px;
+    }
+
+    .contact-form .form-group {
+      margin-bottom: 20px;
+    }
+
+    .contact-form label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      display: inline-block;
+      background: crimson;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: darkred;
+    }
+
+    .success-message {
+      color: green;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+      <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="https://vocal-bonbon-f95ea2.netlify.app/img/logo.png" alt="unisoft logo">
+        </a>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="registration.html">Registration</a><a href="login.html">/Login</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">☰</div>
+  </header>
+
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <form class="contact-form" id="contactForm" onsubmit="return submitContactForm()">
+      <div class="form-group">
+        <label for="name">Your Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="e.g. Website Development Inquiry" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Requirements</label>
+        <textarea id="message" name="message" placeholder="Write your requirement or message..." required></textarea>
+      </div>
+
+      <button type="submit">Submit Message</button>
+      <div class="success-message" id="successMessage"></div>
+    </form>
+  </div>
+
+  <script>
+    function submitContactForm() {
+      // You can replace this with actual backend submission logic
+      const name = document.getElementById("name").value;
+      document.getElementById("successMessage").textContent = "Thank you, " + name + "! Your message has been received.";
+      document.getElementById("contactForm").reset();
+      return false; // Prevent actual form submission
+    }
+  </script>
+</body>
+</html>

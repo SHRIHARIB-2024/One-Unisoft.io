@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAP Services | Unisoft Global Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #f4f7fa, #e0e7ff);
+      color: #333;
+    }
+
+    .navbar {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: crimson;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+      color: #2a2a2a;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: #6b7bff;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      border-radius: 5px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .service-card-content {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .service-card-content h3 {
+      color: #6b7bff;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .service-card-content p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #222;
+      color: #eee;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://vocal-bonbon-f95ea2.netlify.app/img/logo.png" alt="Unisoft Logo">
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="registration.html">Registration</a><a href="login.html">/Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Our SAP Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <img src="https://static.boerse.de/images/Firmenlogos/firmenlogo_DE0007164600.png" alt="SAP Implementation">
+        <div class="service-card-content">
+          <h3>SAP Implementation</h3>
+          <p>End-to-end SAP implementation including planning, configuration, customization, and deployment.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://th.bing.com/th/id/R.1e4552aaf46d06f3633bdf8085f6af29?rik=%2bSj6vB0y0dvJQw&riu=http%3a%2f%2finfocus-in.com%2fwp-content%2fthemes%2finfocus%2fimages%2ft2.jpg&ehk=cCvIdHCR4ahS7Jal5yrBLxyrBHHdbhy5%2f2wb9wE4xv8%3d&risl=&pid=ImgRaw&r=0" alt="SAP Support">
+        <div class="service-card-content">
+          <h3>SAP Support & Maintenance</h3>
+          <p>24/7 support for SAP systems with issue resolution, upgrades, patches, and performance tuning.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://mlhxrkjoggqr.i.optimole.com/w:1000/h:745/q:mauto/f:best/https://ccpglobal.com/wp-content/uploads/2023/01/S4-HANA-cloud.png" alt="S/4HANA Migration">
+        <div class="service-card-content">
+          <h3>SAP S/4HANA Migration</h3>
+          <p>Seamless migration to S/4HANA for improved performance, real-time analytics, and reduced complexity.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://futurelabstechnology.com/wp-content/uploads/elementor/thumbs/SAP-FIORI-UIUX-01-2-q5ovpr4f0kb2uuck6mf2hg94n7kblntfqspwslhk60.jpg" alt="Fiori UX">
+        <div class="service-card-content">
+          <h3>SAP Fiori & UX Design</h3>
+          <p>Build intuitive, responsive applications using SAP Fiori to enhance the user experience across platforms.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://www.mirrorreview.com/wp-content/uploads/2024/07/SAP-Integration_-How-To-Choose-A-Reliable-Contractor.jpg" alt="SAP Integration">
+        <div class="service-card-content">
+          <h3>SAP Integration</h3>
+          <p>Integrate SAP with third-party systems, cloud services, or legacy apps for streamlined operations.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://www.existbi.com/wp-content/uploads/2022/03/SAP-Business-Warehouse-1-1024x576.png" alt="Analytics & BI">
+        <div class="service-card-content">
+          <h3>SAP Analytics & BI</h3>
+          <p>Unlock insights from your data  using SAP Analytics Cloud, BusinessObjects, and custom reporting tools.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://training.uplatz.com/img/post/sell/5fe71daf9eac05fe71daf9eac4.jpg" alt="SAP GRC">
+        <div class="service-card-content">
+          <h3>SAP GRC (Governance, Risk & Compliance)</h3>
+          <p>Ensure compliance and manage risk using SAP GRC Access Control, Process Control, and Audit Management.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://www.trainingfolks.com/hubfs/SAP1.jpg" alt="SAP Training">
+        <div class="service-card-content">
+          <h3>SAP Training & Consulting</h3>
+          <p>Expert guidance and hands-on training to empower your internal teams on SAP technologies and processes.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Unisoft Global Services | SAP Experts for Enterprise Success
+  </footer>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="registration.css">
+  <style>
+    .hidden {
+      display: none;
+    }
+    .info {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="https://www.unisoftglobalservices.com/images/logo.png" alt="Unisoft Logo">
+        </a>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">☰</div>
+  </header>
+<br>
+<br>
+
+ <div class="register-container">
+    <h2>Register</h2>
+    <form id="registerForm" onsubmit="return handleFormSubmit()">
+
+      <div class="form-group">
+        <input type="text" id="username" name="username" placeholder="Username" required />
+      </div>
+
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Email" required />
+      </div>
+
+      <div class="form-group">
+        <div class="otp-container">
+          <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" pattern="[0-9]{10}" maxlength="10" required />
+          <button type="button" onclick="sendOTP()">Send OTP</button>
+        </div>
+        <div id="otp-status" class="info"></div>
+      </div>
+
+      <div class="form-group">
+        <div class="otp-container">
+          <input type="text" id="otp" placeholder="Enter OTP">
+          <button type="button" onclick="confirmOTP()">Confirm OTP</button>
+        </div>
+      </div>
+
+      <!-- Password section: Hidden initially -->
+      <div id="passwordSection" class="hidden">
+        <div class="form-group">
+          <input type="password" id="newPassword" placeholder="New password">
+        </div>
+
+        <div class="form-group">
+          <input type="password" id="confirmPassword" placeholder="Confirm password">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h3> Who am I?</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="category" value="employee"> Employee</label>
+          <label><input type="checkbox" name="category" value="customer"> Customer</label>
+          <label><input type="checkbox" name="category" value="partner"> Partner</label>
+          <label><input type="checkbox" name="category" value="prospect"> Prospect</label>
+          <label><input type="checkbox" name="category" value="potential-employee"> Potential Employee</label>
+          <label><input type="checkbox" name="category" value="other"> Other</label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Register</button>
+    </form>
+
+    <div class="login" style="text-align:center;">
+      <a href="login.html" style="text-decoration: none;">Already have an Account?</a>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+<script>
+  function sendOTP() {
+    const mobile = document.getElementById("mobile").value;
+    const statusDiv = document.getElementById("otp-status");
+
+    if (/^[0-9]{10}$/.test(mobile)) {
+      alert("OTP has been sent to mobile number: " + mobile);
+      statusDiv.textContent = "OTP has been sent successfully.";
+      statusDiv.style.color = "green";
+    } else {
+      statusDiv.textContent = "Please enter a valid 10-digit mobile number.";
+      statusDiv.style.color = "red";
+    }
+  }
+
+  function confirmOTP() {
+    const otp = document.getElementById("otp").value;
+
+    if (otp.trim() === "") {
+      alert("Please enter OTP.");
+      return;
+    }
+
+    // Assuming OTP is valid (you can add real validation here)
+    alert("OTP confirmed!");
+    document.getElementById("passwordSection").classList.remove("hidden");
+  }
+
+  function handleFormSubmit() {
+    const checkboxes = document.querySelectorAll('input[name="category"]:checked');
+    if (checkboxes.length === 0) {
+      alert("Please select at least one category. If you're unsure, select 'Other'.");
+      return false;
+    }
+
+    const newPass = document.getElementById("newPassword").value;
+    const confirmPass = document.getElementById("confirmPassword").value;
+
+    if (newPass || confirmPass) {
+      if (newPass !== confirmPass) {
+        alert("Passwords do not match.");
+        return false;
+      }
+    }
+
+    alert("Form submitted successfully!");
+    return true;
+  }
+
+  
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("nav-active");
+  });
+
+
+</script>
+
+</body>
+</html>
+

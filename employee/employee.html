@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: white;
+      color: black;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+    .header .logo img {
+      height: 50px;
+      width: 100%;
+      margin-right: 10px;
+    }
+    .header .logo {
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .header .user-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .user-info img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .container {
+      display: flex;
+      margin-top: 70px;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #34495e;
+      color: white;
+      height: 100vh;
+      padding-top: 20px;
+      position: fixed;
+      left: 0;
+      top: 70px;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #1abc9c;
+    }
+
+    .main-content {
+      margin-left: 220px;
+      padding: 20px;
+      flex-grow: 1;
+      transition: margin-left 0.3s ease;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: black;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+
+    .collapsed .sidebar {
+      transform: translateX(-100%);
+    }
+
+    .collapsed .main-content {
+      margin-left: 0;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        z-index: 998;
+        height: 100%;
+      }
+      .main-content {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <div class="logo">
+      <img src="https://vocal-bonbon-f95ea2.netlify.app/img/logo.png" alt="Logo" />
+    </div>
+    <div class="user-info">
+      <img src="https://via.placeholder.com/40" alt="User">
+      <div>
+        <div><strong>Shrihari B</strong></div>
+        <div>shrihari@example.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="#" onclick="loadSection('projects')">📁 Projects</a>
+      <a href="#" onclick="loadSection('leaves')">🌴 Leaves</a>
+      <a href="#" onclick="loadSection('performance')">📊 Performance</a>
+      <a href="#" onclick="logout()">🚪 Logout</a>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main-content" id="mainContent">
+      <h2>Welcome to Your Dashboard</h2>
+      <p>Select an option from the sidebar.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.body.classList.toggle('collapsed');
+    }
+
+
+  function loadSection(section) {
+    let content = document.getElementById("mainContent");
+    let page = "";
+
+    if (section === 'projects') {
+      page = "projects.html";
+    } else if (section === 'leaves') {
+      page = "leaves.html";
+    } else if (section === 'performance') {
+      page = "performance.html";
+    }
+
+    // Load the HTML file into the main content area
+    fetch(page)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Page not found");
+        }
+        return response.text();
+      })
+      .then(data => {
+        content.innerHTML = data;
+      })
+      .catch(error => {
+        content.innerHTML = "<p style='color:red;'>Error loading page: " + error.message + "</p>";
+      });
+  }
+
+
+
+    function logout() {
+      alert("You have been logged out.");
+      // Add your logout logic here
+    }
+  </script>
+
+</body>
+</html>

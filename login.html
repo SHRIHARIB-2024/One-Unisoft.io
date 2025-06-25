@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Unisoft Global Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f2f2f2;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo img {
+      height: 45px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background-color: crimson;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: crimson;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #fff;
+        width: 100%;
+        display: none;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.nav-active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+        color: crimson;
+      }
+    }
+
+    /* Login Box */
+    .login-container {
+      max-width: 420px;
+      margin: 100px auto 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: crimson;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      transition: border 0.3s ease;
+      font-size: 15px;
+    }
+
+    input:focus {
+      border-color: crimson;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: crimson;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #a70000;
+    }
+
+    .forgotten {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .forgotten a {
+      text-decoration: none;
+      color: #1d718d;
+      font-weight: bold;
+    }
+
+    .forgotten a:hover {
+      color: rgb(0, 60, 255);
+    }
+
+    hr {
+      margin: 30px auto;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    .create-account {
+      margin-top: 20px;
+    }
+
+    .create-account button {
+      background-color: #333;
+    }
+
+    .create-account button:hover {
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="https://vocal-bonbon-f95ea2.netlify.app/img/logo.png" alt="Unisoft Logo">
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">☰</div>
+  </header>
+
+  <!-- Login Form -->
+  <div class="login-container">
+    <h2>Welcome Back</h2>
+    <form action="emp_reg.html" method="GET">
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="forgotten">
+      <a href="forgotten.html">Forgotten Password?</a>
+    </div>
+
+    <hr>
+
+    <div class="create-account">
+      <form action="registration.html" method="GET">
+        <button type="submit">Create New Account</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-active');
+    });
+  </script>
+</body>
+</html>
